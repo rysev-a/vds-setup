@@ -1,2 +1,2 @@
 site.retry
-/groups_vars/all
+/group_vars/all
