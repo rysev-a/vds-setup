@@ -3,3 +3,4 @@
 - include: install.yml
 - include: configure.yml
 - include: postgresql.yml
+- include: virtualenv.yml

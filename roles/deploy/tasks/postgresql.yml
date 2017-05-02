@@ -1,15 +1,15 @@
 ---
-  - name: Create postgres user
-    become: true
-    become_user: postgres
-    command: psql -U postgres -c "CREATE USER {{username}} with encrypted password '{{password}}';"
+- name: Create postgres user
+  become: true
+  become_user: postgres
+  command: psql -U postgres -c "CREATE USER {{username}} with encrypted password '{{password}}';"
 
-  - name: Create postgres userdb
-    become: true
-    become_user: postgres
-    command: psql -U postgres -c "CREATE DATABASE {{username}};"
+- name: Create postgres userdb
+  become: true
+  become_user: postgres
+  command: psql -U postgres -c "CREATE DATABASE {{username}};"
 
-  - name: Change user role
-    become: true
-    become_user: postgres
-    command: psql -U postgres -c "ALTER USER {{username}} with SUPERUSER;"
+- name: Change user role
+  become: true
+  become_user: postgres
+  command: psql -U postgres -c "ALTER USER {{username}} with SUPERUSER;"

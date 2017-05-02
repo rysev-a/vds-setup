@@ -5,3 +5,9 @@
     password: "{{ password |password_hash('sha512') }}"
     shell: /bin/bash
     group: sudo
+
+- name: Set authorized key defining key options
+  authorized_key:
+    user: alex
+    state: present
+    key: "{{ lookup('file', '/home/alex/.ssh/id_rsa.pub') }}"
